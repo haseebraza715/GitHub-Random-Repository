@@ -1,10 +1,10 @@
 /* Global styles */
 body {
-  font-family: "Arial", sans-serif;
+  font-family: "JetBrains Mono", monospace; /* Clean and simple font */
   margin: 0;
   padding: 0;
-  background: rgb(43, 49, 55); /* Main dark background */
-  color: rgb(200, 200, 200); /* Muted text color */
+  background: #ffffff; /* White background */
+  color: #000000; /* Black text */
   text-align: center;
   min-height: 100vh;
   display: flex;
@@ -15,101 +15,110 @@ body {
 
 /* Container */
 .container {
-  background: rgb(35, 40, 45); /* Darker container background */
-  color: rgb(200, 200, 200); /* Muted text color */
-  border-radius: 12px;
-  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
-  padding: 20px 30px;
-  width: 90%;
-  max-width: 600px;
-  max-height: 80vh; /* Limit height of the container */
-  overflow-y: auto; /* Enable scrolling if content exceeds the height */
+  background: #ffffff; /* White container */
+  color: #000000; /* Black text */
+  border: 1px solid #000000; /* Black border */
+  padding: 20px;
+  width: 95%;
+  max-width: 700px;
+  max-height: 85vh; /* Limit height of the container */
+  overflow-y: auto; /* Enable scrolling for long content */
   text-align: center;
+  box-sizing: border-box;
 }
 
 /* Title */
 h1 {
   font-size: 2rem;
+  font-weight: bold;
   margin-bottom: 20px;
-  color: rgb(230, 230, 230); /* Slightly lighter muted color for the title */
-  text-shadow: 0px 2px 3px rgba(0, 0, 0, 0.8);
+  text-transform: uppercase;
+  border-bottom: 2px solid #000000; /* Black underline for emphasis */
+  padding-bottom: 10px;
 }
 
 /* Dropdown styling */
 select {
   width: 100%;
-  padding: 12px 15px;
-  border-radius: 8px;
-  border: 2px solid rgb(55, 61, 67); /* Border matches the muted dark theme */
+  padding: 10px;
+  border: 1px solid #000000; /* Black border */
   font-size: 1rem;
   margin-bottom: 20px;
-  outline: none;
-  background: rgb(55, 61, 67); /* Dropdown background */
-  color: rgb(200, 200, 200); /* Text matches muted color */
+  background: #ffffff; /* White dropdown */
+  color: #000000; /* Black text */
 }
 
 /* Button styling */
 button {
-  padding: 12px 25px;
+  padding: 10px 20px;
   font-size: 1rem;
+  font-family: 'JetBrains Mono', monospace;
+
   font-weight: bold;
-  color: rgb(200, 200, 200); /* Muted text color */
-  background: rgb(75, 80, 85); /* Dark button background */
+  color: #ffffff; /* White text */
+  background: #000000; /* Black button background */
   border: none;
-  border-radius: 8px;
   cursor: pointer;
-  transition: 0.3s;
-  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
 }
 
 button:hover {
-  background: rgb(95, 100, 105); /* Slightly lighter on hover */
-  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.5);
-  transform: translateY(-2px);
+  background: #333333; /* Slightly muted black on hover */
 }
 
 /* Repository details styling */
 #repo-details {
   margin-top: 20px;
-  background: rgb(55, 61, 67); /* Darker muted background for details */
-  border-radius: 8px;
+  background: #ffffff; /* White background */
+  border: 1px solid #000000; /* Black border */
   padding: 15px;
-  color: rgb(200, 200, 200); /* Muted text color */
-  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
-  overflow-y: auto; /* Enables scrolling for long repository lists */
-  max-height: 60vh; /* Limit height of the repository list */
+  color: #000000; /* Black text */
+  text-align: left; /* Align text to the left for readability */
+  max-height: 60vh;
+  overflow-y: auto;
+  box-sizing: border-box;
 }
 
-#repo-details h2 {
-  font-size: 1.5rem;
-  color: rgb(230, 230, 230); /* Slightly lighter color for headings */
+/* Repository card styling */
+.repo-card {
+  background: #ffffff; /* White background */
+  border: 1px solid #000000; /* Black border */
+  border-radius: 5px; /* Rounded corners for a softer look */
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+.repo-card h2 {
+  font-size: 1.2rem;
   margin-bottom: 10px;
+  color: #000000; /* Black text */
+  font-weight: bold;
+  border-bottom: 1px solid #000000; /* Underline for titles */
+  padding-bottom: 5px;
 }
 
-#repo-details p {
-  margin: 10px 0;
-  font-size: 1rem;
-  color: rgb(180, 180, 180); /* Slightly muted text for descriptions */
+.repo-card p {
+  font-size: 0.9rem;
+  margin: 5px 0;
+  color: #000000; /* Black text */
+  line-height: 1.5; /* Improve readability with better spacing */
 }
 
-#repo-details a {
+.repo-card a {
   display: inline-block;
   margin-top: 10px;
   text-decoration: none;
-  color: rgb(200, 200, 200); /* Muted text for links */
-  background: rgb(75, 80, 85); /* Matches button styling */
-  padding: 10px 20px;
-  border-radius: 8px;
-  font-size: 1rem;
+  color: #000000; /* Black text */
+  background: #ffffff; /* White background for buttons */
+  border: 1px solid #000000; /* Black border */
+  padding: 10px 15px;
+  font-size: 0.9rem;
   font-weight: bold;
   transition: 0.3s;
-  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
 }
 
-#repo-details a:hover {
-  background: rgb(95, 100, 105); /* Slightly lighter on hover */
-  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
-  transform: translateY(-2px);
+.repo-card a:hover {
+  background: #000000; /* Black button on hover */
+  color: #ffffff; /* White text on hover */
 }
 
 /* Scrollbar styling */
@@ -118,31 +127,38 @@ button:hover {
 }
 
 #repo-details::-webkit-scrollbar-track {
-  background: rgb(35, 40, 45); /* Matches container background */
-  border-radius: 8px;
+  background: #ffffff; /* White background */
 }
 
 #repo-details::-webkit-scrollbar-thumb {
-  background: rgb(75, 80, 85); /* Matches muted dark colors */
-  border-radius: 8px;
+  background: #000000; /* Black scrollbar */
 }
 
 #repo-details::-webkit-scrollbar-thumb:hover {
-  background: rgb(95, 100, 105); /* Slightly lighter on hover */
+  background: #333333; /* Slightly muted black on hover */
 }
 
 /* Responsive design */
 @media (max-width: 768px) {
   h1 {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
   }
 
   button {
-    padding: 10px 20px;
+    padding: 8px 15px;
     font-size: 0.9rem;
   }
 
-  #repo-details h2 {
-    font-size: 1.3rem;
+  .repo-card {
+    padding: 10px;
+  }
+
+  .repo-card h2 {
+    font-size: 1rem;
+  }
+
+  .repo-card a {
+    font-size: 0.8rem;
+    padding: 8px 12px;
   }
 }
