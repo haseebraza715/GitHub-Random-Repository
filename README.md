@@ -15,7 +15,7 @@ A simple web application that allows users to search for the top GitHub reposito
 ## **Usage**
 1. Clone the repository:
    ```bash
-   git clone <repository_url>
+   git clone git@github.com:haseebraza715/GitHub-Random-Repository.git
    ```
 2. Open the `index.html` file in any modern web browser.
 3. Select a programming language from the dropdown menu.
