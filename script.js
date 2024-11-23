@@ -14,8 +14,6 @@ async function loadLanguages() {
     const response = await fetch(languageUrl); // Fetch the JSON file
     const languages = await response.json(); // Parse JSON response
 
-    console.log("Fetched Languages:", languages); // Debugging log
-
     // Populate the dropdown with languages
     languages.forEach((language) => {
       const option = document.createElement("option");
@@ -28,6 +26,7 @@ async function loadLanguages() {
     alert("Failed to load programming languages. Please try again.");
   }
 }
+
 // Function to fetch repositories for the selected language
 async function fetchRepository() {
   const selectedLanguage = languageSelect.value;
@@ -47,8 +46,6 @@ async function fetchRepository() {
       `${apiBaseUrl}${selectedLanguage}&sort=stars&order=desc`
     );
     const data = await response.json();
-
-    console.log("Fetched Repositories:", data); // Debugging log
 
     // Check if repositories exist for the selected language
     if (data.items && data.items.length > 0) {
@@ -72,30 +69,47 @@ function displayRepositories(repositories) {
   // Create a title for the list
   const title = document.createElement("h2");
   title.textContent = "Top Repositories:";
-  title.style.color = "#2575fc";
+  title.style.color = "#000000"; // Black text for title
   title.style.marginBottom = "10px";
+  title.style.fontWeight = "bold";
   repoDetails.appendChild(title);
 
   // Iterate over the repositories and create cards for each
   repositories.slice(0, 10).forEach((repo) => {
     const repoCard = document.createElement("div");
     repoCard.style.marginBottom = "15px";
-    repoCard.style.padding = "10px";
-    repoCard.style.background = "#f4f4f4";
-    repoCard.style.borderRadius = "8px";
-    repoCard.style.boxShadow = "0px 5px 10px rgba(0, 0, 0, 0.1)";
-    repoCard.style.textAlign = "left";
+    repoCard.style.padding = "15px"; // Increased padding for better spacing
+    repoCard.style.background = "#FFFFFF"; // White background
+    repoCard.style.border = "1px solid #000000"; // Black border
+    repoCard.style.borderRadius = "8px"; // Rounded corners
+    repoCard.style.textAlign = "left"; // Align text to the left
 
     repoCard.innerHTML = `
-            <h3 style="color: #2575fc;">${repo.name}</h3>
-            <p>${repo.description || "No description available."}</p>
-            <p><strong>⭐ Stars:</strong> ${repo.stargazers_count}</p>
-            <p><strong>🍴 Forks:</strong> ${repo.forks_count}</p>
-            <p><strong>🐞 Open Issues:</strong> ${repo.open_issues_count}</p>
-            <a href="${
-              repo.html_url
-            }" target="_blank" style="color: #fff; background: linear-gradient(to right, #6a11cb, #2575fc); padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: bold;">View Repository</a>
-        `;
+      <h3 style="color: #000000; font-weight: bold; margin-bottom: 8px;">${
+        repo.name
+      }</h3>
+      <p style="color: #000000; margin: 5px 0;">${
+        repo.description || "No description available."
+      }</p>
+      <p style="color: #000000; margin: 5px 0;"><strong>⭐ Stars:</strong> ${
+        repo.stargazers_count
+      }</p>
+      <p style="color: #000000; margin: 5px 0;"><strong>🍴 Forks:</strong> ${
+        repo.forks_count
+      }</p>
+      <p style="color: #000000; margin: 5px 0;"><strong>🐞 Open Issues:</strong> ${
+        repo.open_issues_count
+      }</p>
+      <a href="${repo.html_url}" target="_blank" 
+         style="color: #FFFFFF; 
+                background: #000000; 
+                padding: 10px 15px; 
+                border-radius: 5px; 
+                text-decoration: none; 
+                font-weight: bold; 
+                display: inline-block;
+                margin-top: 10px;">View Repository</a>
+    `;
     repoDetails.appendChild(repoCard);
   });
 }

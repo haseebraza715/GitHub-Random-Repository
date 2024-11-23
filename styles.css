@@ -52,7 +52,7 @@ select {
 button {
   padding: 10px 20px;
   font-size: 1rem;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: "JetBrains Mono", monospace;
 
   font-weight: bold;
   color: #ffffff; /* White text */
@@ -78,13 +78,21 @@ button:hover {
   box-sizing: border-box;
 }
 
-/* Repository card styling */
 .repo-card {
   background: #ffffff; /* White background */
   border: 1px solid #000000; /* Black border */
-  border-radius: 5px; /* Rounded corners for a softer look */
-  padding: 15px;
-  margin-bottom: 20px;
+  border-radius: 5px; /* Rounded corners */
+  padding: 10px 15px; /* Adjusted padding for better fit */
+  margin-bottom: 15px; /* Spacing between cards */
+  text-align: left; /* Left-aligned content */
+  box-sizing: border-box; /* Ensure padding is included in dimensions */
+}
+
+.repo-card h3 {
+  font-size: 1.2rem; /* Adjusted for better fit */
+  margin: 5px 0; /* Smaller margin to save space */
+  font-weight: bold;
+  color: #000000; /* Black text */
 }
 
 .repo-card h2 {
@@ -97,10 +105,10 @@ button:hover {
 }
 
 .repo-card p {
-  font-size: 0.9rem;
-  margin: 5px 0;
+  font-size: 0.9rem; /* Smaller font for details */
+  line-height: 1.4; /* Improved line spacing */
+  margin: 3px 0; /* Tightened spacing between lines */
   color: #000000; /* Black text */
-  line-height: 1.5; /* Improve readability with better spacing */
 }
 
 .repo-card a {
@@ -160,5 +168,41 @@ button:hover {
   .repo-card a {
     font-size: 0.8rem;
     padding: 8px 12px;
+  }
+}
+.view-repo-button {
+  display: inline-block;
+  margin-top: 10px; /* Reduced spacing above the button */
+  color: #ffffff; /* White text */
+  background: #000000; /* Black button background */
+  padding: 8px 15px; /* Slightly smaller padding */
+  border-radius: 5px; /* Rounded corners */
+  text-decoration: none; /* Remove underline */
+  font-size: 0.9rem; /* Adjusted font size */
+  font-weight: bold;
+  text-align: center;
+}
+
+.view-repo-button:hover {
+  background: #333333; /* Slightly muted black on hover */
+}
+
+/* Adjustments for smaller screens */
+@media (max-width: 768px) {
+  .repo-card {
+    padding: 8px 10px; /* Reduced padding */
+  }
+
+  .repo-card h3 {
+    font-size: 1rem; /* Smaller font for titles */
+  }
+
+  .repo-card p {
+    font-size: 0.8rem; /* Smaller font for details */
+  }
+
+  .view-repo-button {
+    font-size: 0.8rem; /* Adjusted button text size */
+    padding: 6px 10px; /* Reduced padding for smaller screens */
   }
 }
